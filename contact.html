@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ofarin — Contact</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">OFARIN</a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="booking.html" data-i18n="nav_booking">Booking</a>
+      <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="lang-switcher">
+      <button onclick="setLang('en')" id="lang-en">EN</button>
+      <button onclick="setLang('uz')" id="lang-uz">UZ</button>
+      <button onclick="setLang('ru')" id="lang-ru">RU</button>
+    </div>
+    <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <button class="burger" onclick="toggleMenu()">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="booking.html" data-i18n="nav_booking">Booking</a>
+    <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <div class="lang-switcher mt"><button onclick="setLang('en')">EN</button><button onclick="setLang('uz')">UZ</button><button onclick="setLang('ru')">RU</button></div>
+    <button id="themeToggleMobile" class="theme-toggle mobile" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
+<div class="page-hero-small">
+  <h1 data-i18n="contact_title">Contact Us</h1>
+  <p data-i18n="contact_sub">We're here to help plan your perfect day</p>
+</div>
+
+<section class="section contact-section">
+  <div class="contact-layout">
+
+    <div class="contact-info">
+      <h2 data-i18n="contact_reach">Reach Us</h2>
+
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong data-i18n="contact_phone_label">Phone</strong>
+          <p><a href="tel:+998914683920">+998 91 468 3920</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <strong data-i18n="contact_email_label">Email</strong>
+          <p><a href="mailto:assik2202@gmail.com">assik2202@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div>
+          <strong>Telegram</strong>
+          <p><a href="https://t.me/assik22" target="_blank">@assik22</a></p>
+          <p><a href="https://t.me/@ofarintuyxonasii" target="_blank">Ofarin Telegram kanali</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">�</div>
+        <div>
+          <strong>Instagram</strong>
+          <p><a href="https://www.instagram.com/ofarin_restaurant" target="_blank">@ofarin_toyxonasi</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon"></div>
+        <div>
+          <strong data-i18n="contact_address_label">Address</strong>
+          <p data-i18n="contact_address">Ofarin To'yxonasi, Guzar, Qashqadaryo Region, Uzbekistan</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <strong data-i18n="contact_hours_label">Working Hours</strong>
+          <p data-i18n="contact_hours">Every day: 08:00 – 24:00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form-wrap">
+      <h3 data-i18n="contact_form_title">Send a Message</h3>
+      <div class="form-group">
+        <label data-i18n="form_name">Full Name</label>
+        <input type="text" id="cf_name" placeholder="Your name"/>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_phone">Phone</label>
+        <input type="tel" id="cf_phone" placeholder="+998 XX XXX XXXX"/>
+      </div>
+      <div class="form-group">
+        <label data-i18n="contact_msg_label">Message</label>
+        <textarea id="cf_message" rows="5" placeholder="Your question or message..."></textarea>
+      </div>
+      <button class="btn-primary full" onclick="sendContact()" data-i18n="form_submit">Send Message</button>
+      <div id="contactMsg" class="form-msg" style="display:none"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="section map-section">
+  <div class="section-header">
+    <span class="label" data-i18n="map_label">Find Us</span>
+    <h2 data-i18n="map_title">Our Location</h2>
+  </div>
+  <div class="map-container">
+    <iframe
+      src="https://maps.google.com/maps?q=J6HH%2BHQG+Guzar+Qashqadaryo+Uzbekistan&output=embed&z=15"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="logo">OFARIN</span><p>Guzar, Qashqadaryo</p></div>
+    <div class="footer-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="booking.html" data-i18n="nav_booking">Booking</a>
+      <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="footer-contact"><p>+998 91 468 3920</p><p>assik2202@gmail.com</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Ofarin To'yxonasi</p></div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+<script>
+function sendContact() {
+  const name = document.getElementById('cf_name').value.trim();
+  const phone = document.getElementById('cf_phone').value.trim();
+  const msg = document.getElementById('cf_message').value.trim();
+  const msgEl = document.getElementById('contactMsg');
+  const lang = localStorage.getItem('ofarin_lang') || 'en';
+  const msgs = {
+    en: { err: 'Please fill in all fields.', ok: 'Thank you! We will contact you soon.' },
+    uz: { err: 'Iltimos, barcha maydonlarni to\'ldiring.', ok: 'Rahmat! Tez orada siz bilan bog\'lanamiz.' },
+    ru: { err: 'Пожалуйста, заполните все поля.', ok: 'Спасибо! Мы скоро свяжемся с вами.' }
+  };
+  if (!name || !phone || !msg) {
+    msgEl.textContent = msgs[lang].err;
+    msgEl.className = 'form-msg error';
+    msgEl.style.display = 'block';
+    return;
+  }
+  // Save to localStorage
+  const contacts = JSON.parse(localStorage.getItem('ofarin_contacts') || '[]');
+  contacts.push({ name, phone, message: msg, date: new Date().toISOString() });
+  localStorage.setItem('ofarin_contacts', JSON.stringify(contacts));
+  msgEl.textContent = msgs[lang].ok;
+  msgEl.className = 'form-msg success';
+  msgEl.style.display = 'block';
+  document.getElementById('cf_name').value = '';
+  document.getElementById('cf_phone').value = '';
+  document.getElementById('cf_message').value = '';
+}
+</script>
+</body>
+</html>

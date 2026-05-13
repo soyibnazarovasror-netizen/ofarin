@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ofarin — Gallery</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">OFARIN</a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="booking.html" data-i18n="nav_booking">Booking</a>
+      <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="lang-switcher">
+      <button onclick="setLang('en')" id="lang-en">EN</button>
+      <button onclick="setLang('uz')" id="lang-uz">UZ</button>
+      <button onclick="setLang('ru')" id="lang-ru">RU</button>
+    </div>
+    <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <button class="burger" onclick="toggleMenu()">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="booking.html" data-i18n="nav_booking">Booking</a>
+    <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <div class="lang-switcher mt"><button onclick="setLang('en')">EN</button><button onclick="setLang('uz')">UZ</button><button onclick="setLang('ru')">RU</button></div>
+    <button id="themeToggleMobile" class="theme-toggle mobile" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
+<div class="page-hero-small">
+  <h1 data-i18n="gallery_title">Gallery</h1>
+  <p data-i18n="gallery_sub">Our venue, our celebrations</p>
+</div>
+
+<section class="section gallery-section">
+  <div class="gallery-tabs">
+    <button class="tab-btn active" onclick="filterGallery('all')" data-i18n="tab_all">All</button>
+    <button class="tab-btn" onclick="filterGallery('photo')" data-i18n="tab_photos">Photos</button>
+    <button class="tab-btn" onclick="filterGallery('video')" data-i18n="tab_videos">Videos</button>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Populated by gallery.js from localStorage or placeholders -->
+  </div>
+
+  <div class="gallery-empty" id="galleryEmpty" style="display:none">
+    <p data-i18n="gallery_empty">No media uploaded yet. Check back soon!</p>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt=""/>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="logo">OFARIN</span><p>Guzar, Qashqadaryo</p></div>
+    <div class="footer-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="booking.html" data-i18n="nav_booking">Booking</a>
+      <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="footer-contact"><p>+998 91 468 3920</p><p>assik2202@gmail.com</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Ofarin To'yxonasi</p></div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>
